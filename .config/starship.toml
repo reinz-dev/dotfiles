@@ -91,7 +91,7 @@ format = '[[ $symbol $branch](bg:#001647)]($style)'
  
 [git_status]
 style = "bg:#001647"
-format = '[[($all_status $ahead_behind)](bg:#001647)]($style)'
+format = '[[($all_status$ahead_behind )](bg:#001647)]($style)'
  
 [git_state]
 style = "bg:#890743"
