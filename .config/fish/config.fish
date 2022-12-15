@@ -217,6 +217,9 @@ alias cl='clear'
 alias x='exit'
 alias logout='gnome-session-quit --force'
 alias spek='neofetch'
+alias pbpaste='xsel -b -o'
+alias pbcopy='xsel -b -i'
+
 
 # python
 alias py='python'
