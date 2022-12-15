@@ -6,8 +6,6 @@
 
 -- if you like this configuration on archlinux, let's follow step by step te installation. --
 
-
-
 ##### 1 . install kitty terminal
 
 ```git
