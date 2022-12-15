@@ -5,10 +5,12 @@ $username\
 $directory\
 [](fg:#151E71 bg:#001647)\
 $git_branch\
+[](fg:#001647 bg:#001647)\
 $git_status\
-[](fg:#001647 bg:#120F23)\
+[](fg:#001647 bg:#890743)\
 $git_state\
 $git_metrics\
+[](fg:#890743 bg:#120F23)\
 $c\
 $elixir\
 $elm\
@@ -19,11 +21,10 @@ $julia\
 $nodejs\
 $nim\
 $rust\
-[](fg:#120F23 bg:#0895F9)\
+[](fg:#120F23 bg:#890743)\
 $docker_context\
-[](fg:#0895F9 bg:#692b82)\
+[](fg:#890743 bg:#)\
 $time\
-[ ](fg:#692b82)\
 $line_break\
 $character
 """
@@ -86,17 +87,19 @@ format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 [git_branch]
 symbol = ""
 style = "bg:#001647"
-format = '[[ $symbol $branch ](bg:#001647)]($style)'
+format = '[[ $symbol $branch](bg:#001647)]($style)'
  
 [git_status]
 style = "bg:#001647"
-format = '[[($all_status$ahead_behind )](bg:#001647)]($style)'
+format = '[[($all_status $ahead_behind)](bg:#001647)]($style)'
  
 [git_state]
-style = "bg:#565f89"
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bg:#890743"
+format = '([$state( $progress_current/$progress_total)]($style)) '
 
 [git_metrics]
+added_style = "#1a1b26"
+format = '([ +$added ](bg:#890743))([-$deleted ](bg:#890743))'
 disabled = false
 
 [golang]
@@ -138,4 +141,4 @@ format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#0b143b"
-format = '[[  $time ](bg:#692b82)]($style)'
+format = '[[  $time ](bg:#)]($style)'
