@@ -2,9 +2,10 @@
 
 ### Kitty Terminal (starship, ranger, tmux, nvim)
 
-![terminal](https://user-images.githubusercontent.com/110806427/207852287-5e8869c1-aa46-44ff-8f54-d45702868083.png)
+![kitty-terminal](https://user-images.githubusercontent.com/110806427/207857512-0c2c01c5-3501-4196-9bbb-8881018e403e.png)
 
 -- if you like this configuration on archlinux, let's follow step by step te installation. --
+
 
 ##### 1 . install kitty terminal
 
