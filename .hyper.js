@@ -8,7 +8,7 @@ module.exports = {
     // or `'canary'` for less polished but more frequent updates
     updateChannel: "stable",
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 13,
     // font family with optional fallbacks
     fontFamily: "Hack Nerd Font",
     // default font weight: 'normal' or 'bold'
@@ -131,18 +131,18 @@ module.exports = {
     preserveCWD: true,
     // set rounded border
     hyperborder: {
-      borderColors: ['random', 'random'],
-      borderRadiusinner: '50px',
-      borderRadiusOuter: '50px',
-      borderWidth: '0px',
+      borderColors: ["random", "random"],
+      borderRadiusinner: "50px",
+      borderRadiusOuter: "50px",
+      borderWidth: "0px",
       animate: {
-        duration: '1000', //default 18000
+        duration: "1000", //default 18000
       },
     },
     hypertransparent: {
-      backgroundColor: '#000',
+      backgroundColor: "#000",
       opacity: 0.2,
-      vibrancy: '' // ['', 'dark', 'medium-light', 'ultra-dark'],
+      vibrancy: "", // ['', 'dark', 'medium-light', 'ultra-dark'],
     },
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
