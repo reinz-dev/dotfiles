@@ -6,7 +6,6 @@
 
 -- if you like this configuration on archlinux, let's follow step by step te installation. --
 
-
 ##### 1 . install kitty terminal
 
 ```git
@@ -24,5 +23,6 @@ sudo chsh -s /usr/bin/fish
 
 ```git
 git clone https://github.com/reinzcity/dotfiles.git
-cp -rf dotfiles/ . $HOME
+cd dotfiles/
+cp -rf . $HOME
 ```
