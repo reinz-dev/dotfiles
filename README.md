@@ -32,4 +32,4 @@ cp -rf . $HOME
 paru -S nerd-fonts-complate
 ```
 
-Installation first [Paru AUR](http://github.com/Morganamilo/paru)
+Installation first [PARU AUR](http://github.com/Morganamilo/paru)
