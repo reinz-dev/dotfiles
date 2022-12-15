@@ -21,9 +21,9 @@ $nim\
 $rust\
 [](fg:#120F23 bg:#0895F9)\
 $docker_context\
-[](fg:#0895F9 bg:#0f4b6e)\
+[](fg:#0895F9 bg:#692b82)\
 $time\
-[ ](fg:#0f4b6e)\
+[ ](fg:#692b82)\
 $line_break\
 $character
 """
@@ -48,10 +48,10 @@ truncation_symbol = "…/"
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = "📄 "
-"Downloads" = "📥 "
-"Music" = "🎜 "
-"Pictures" = "📷 "
+"Documents" = "  "
+"Downloads" = "  "
+"Music" = "  "
+"Pictures" = "  "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
 # will not be replaced, because "Documents" was already substituted before.
@@ -110,9 +110,9 @@ style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
 [java]
-symbol = "  "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+symbol = " "
+style = "bg:#120F23"
+format = '[[ $symbol ($version) ](bg:#120F23)]($style)'
  
 [julia]
 symbol = "ஃ "
@@ -137,5 +137,5 @@ format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#0f4b6e"
-format = '[[  $time ](bg:#0f4b6e)]($style)'
+style = "bg:#0b143b"
+format = '[[  $time ](bg:#692b82)]($style)'
