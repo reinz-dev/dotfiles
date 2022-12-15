@@ -1,6 +1,6 @@
 format = """
-[](#9A0638)\
-$username\
+[](fg:#9A0638 bg:#111111)\
+[   ](bg:#9a0638 fg:#ffffff)\
 [](bg:#151E71 fg:#9A0638)\
 $directory\
 [](fg:#151E71 bg:#001647)\
@@ -25,6 +25,7 @@ $rust\
 $docker_context\
 [](fg:#890743 bg:#)\
 $time\
+$battery\
 $line_break\
 $character
 """
@@ -136,7 +137,18 @@ format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 symbol = "🦀"
 style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
- 
+
+[battery]
+full_symbol = "F"
+charging_symbol = "C"
+discharging_symbol = "D"
+format = '[$symbol$percentage]($style) '
+disabled = false
+
+[[battery.display]]
+threshold = 30
+style = "bold red"
+
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
