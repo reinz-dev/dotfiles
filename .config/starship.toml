@@ -62,8 +62,8 @@ truncation_symbol = "…/"
  
 [c]
 symbol = "© "
-style = "bg:#001647"
-format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
 [character]
 #success_symbol = "[](purple)"
@@ -82,8 +82,8 @@ format = '[[ $symbol ($version) ](bg:#7aa2f7)]($style)'
  
 [elm]
 symbol = "🌳 "
-style = "bg:#001647"
-format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
 [git_branch]
 symbol = ""
@@ -96,7 +96,7 @@ format = '[[($all_status$ahead_behind )](bg:#001647)]($style)'
  
 [git_state]
 style = "bg:#890743"
-format = '([$state( $progress_current/$progress_total)]($style)) '
+format = '([ $state( $progress_current/$progress_total )]($style)) '
 
 [git_metrics]
 added_style = "#1a1b26"
@@ -105,13 +105,13 @@ disabled = false
 
 [golang]
 symbol = "🐹 "
-style = "bg:#001647"
-format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
 [haskell]
 symbol = "λ "
-style = "bg:#001647"
-format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
 [java]
 symbol = " "
@@ -120,8 +120,8 @@ format = '[[ $symbol ($version) ](bg:#120F23)]($style)'
  
 [julia]
 symbol = "ஃ "
-style = "bg:#001647"
-format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
 [nodejs]
 symbol = ""
@@ -130,13 +130,13 @@ format = '[[ $symbol ($version) ](bg:#120F23)]($style)'
  
 [nim]
 symbol = "👑 "
-style = "bg:#001647"
-format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
 [rust]
 symbol = "🦀"
-style = "bg:#001647"
-format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
 [battery]
 full_symbol = "F"
