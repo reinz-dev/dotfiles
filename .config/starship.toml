@@ -25,7 +25,6 @@ $rust\
 $docker_context\
 [](fg:#890743 bg:#)\
 $time\
-$battery\
 $line_break\
 $character
 """
@@ -138,19 +137,19 @@ symbol = "🦀"
 style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
-[battery]
-full_symbol = "F"
-charging_symbol = "C"
-discharging_symbol = "D"
-format = '[$symbol$percentage]($style) '
-disabled = false
-
-[[battery.display]]
-threshold = 30
-style = "bold red"
+# [battery]
+# full_symbol = "  "
+# charging_symbol = " "
+# discharging_symbol = "  "
+# format = '[$symbol$percentage]($style) '
+# disabled = false
+#
+# [[battery.display]]
+# threshold = 30
+# style = "bold red"
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#0b143b"
-format = '[[  $time ](bg:#)]($style)'
+format = '[[  $time ](bg:#)]($style)'
