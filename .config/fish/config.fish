@@ -275,10 +275,8 @@ alias paruinstall='paru -S'
 alias yayinstall='yay -S'
 alias update='sudo pacman -Syyu'                  # update only standard pkgs
 #alias pacupgrade='sudo pacman -Syyu'                # Refresh pkglist & update standard pkgs
-alias yayupdate='yay -Sua --noconfirm'              # update only AUR pkgs (yay)
-alias yayupgrade='yay -Syu --noconfirm'              # update standard pkgs and AUR pkgs (yay)
-alias paruupdate='paru -Sua --noconfirm'             # update only AUR pkgs (paru)
-alias paruupgrade='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs (paru)
+alias yay='yay --Syu && yay -Sua --noconfirm'              # update only AUR pkgs (yay)
+alias paru='paru -Syu && paru -Sua --noconfirm'             # update only AUR pkgs (paru)
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # remove orphaned packages
 
@@ -414,6 +412,5 @@ starship init fish | source
 
 #source ~/.local/share/icons-in-terminal/icons.fish
 
-
-
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
