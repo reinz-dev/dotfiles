@@ -1,10 +1,9 @@
-##   _____.__       .__                             _____.__        
-## _/ ____\__| _____|  |__       ____  ____   _____/ ____\__| ____  
-## \   __\|  |/  ___/  |  \    _/ ___\/  _ \ /    \   __\|  |/ ___\ 
-##  |  |  |  |\___ \|   Y  \   \  \__(  <_> )   |  \  |  |  / /_/  >
-##  |__|  |__/____  >___|  /____\___  >____/|___|  /__|  |__\___  / 
-##                \/     \/_____/   \/           \/        /_____/  
-## 
+## ░░░░░░░ ░░ ░░░░░░░ ░░   ░░      ░░░░░░  ░░░░░░  ░░░    ░░ ░░░░░░░ ░░  ░░░░░░  
+## ▒▒      ▒▒ ▒▒      ▒▒   ▒▒     ▒▒      ▒▒    ▒▒ ▒▒▒▒   ▒▒ ▒▒      ▒▒ ▒▒       
+## ▒▒▒▒▒   ▒▒ ▒▒▒▒▒▒▒ ▒▒▒▒▒▒▒     ▒▒      ▒▒    ▒▒ ▒▒ ▒▒  ▒▒ ▒▒▒▒▒   ▒▒ ▒▒   ▒▒▒ 
+## ▓▓      ▓▓      ▓▓ ▓▓   ▓▓     ▓▓      ▓▓    ▓▓ ▓▓  ▓▓ ▓▓ ▓▓      ▓▓ ▓▓    ▓▓ 
+## ██      ██ ███████ ██   ██      ██████  ██████  ██   ████ ██      ██  ██████  
+
 ##  My fish config. Not much to see here; just some pretty standard stuff.
 
 ### ADDING TO THE PATH
@@ -14,13 +13,13 @@ set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin $HOME/Applications $fish_user_paths
 
 # pwal color scheme
-cat ~/.cache/wal/sequences &
+#cat ~/.cache/wal/sequences &
 
 ### EXPORT ###
-set fish_greeting                                 # Supresses fish's intro message
-set TERM "xterm-256color"                         # Sets the terminal type
-set EDITOR "emacsclient -t -a ''"                 # $EDITOR use Emacs in terminal
-set VISUAL "emacsclient -c -a emacs"              # $VISUAL use Emacs in GUI mode
+set fish_greeting # Supresses fish's intro message
+set TERM xterm-256color # Sets the terminal type
+set EDITOR "emacsclient -t -a ''" # $EDITOR use Emacs in terminal
+set VISUAL "emacsclient -c -a emacs" # $VISUAL use Emacs in GUI mode
 
 ### SET MANPAGER
 ### Uncomment only one of these!
@@ -36,10 +35,13 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
-  # fish_default_key_bindings
-  fish_vi_key_bindings
+    # fish_default_key_bindings
+    fish_vi_key_bindings
 end
 ### END OF VI MODE ###
+
+set -U fish_cursor_insert underscore
+set -U fish_cursor_replace_one underscore
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
@@ -107,7 +109,7 @@ end
 # Spark functions
 function letters
     cat $argv | awk -vFS='' '{for(i=1;i<=NF;i++){ if($i~/[a-zA-Z]/) { w[tolower($i)]++} } }END{for(i in w) print i,w[i]}' | sort | cut -c 3- | spark | lolcat
-    printf  '%s\n' 'abcdefghijklmnopqrstuvwxyz'  ' ' | lolcat
+    printf '%s\n' abcdefghijklmnopqrstuvwxyz ' ' | lolcat
 end
 
 function commits
@@ -116,30 +118,31 @@ end
 
 # Functions needed for !! and !$
 function __history_previous_command
-  switch (commandline -t)
-  case "!"
-    commandline -t $history[1]; commandline -f repaint
-  case "*"
-    commandline -i !
-  end
+    switch (commandline -t)
+        case "!"
+            commandline -t $history[1]
+            commandline -f repaint
+        case "*"
+            commandline -i !
+    end
 end
 
 function __history_previous_command_arguments
-  switch (commandline -t)
-  case "!"
-    commandline -t ""
-    commandline -f history-token-search-backward
-  case "*"
-    commandline -i '$'
-  end
+    switch (commandline -t)
+        case "!"
+            commandline -t ""
+            commandline -f history-token-search-backward
+        case "*"
+            commandline -i '$'
+    end
 end
 # The bindings for !! and !$
-if [ "$fish_key_bindings" = "fish_vi_key_bindings" ];
-  bind -Minsert ! __history_previous_command
-  bind -Minsert '$' __history_previous_command_arguments
+if [ "$fish_key_bindings" = fish_vi_key_bindings ]
+    bind -Minsert ! __history_previous_command
+    bind -Minsert '$' __history_previous_command_arguments
 else
-  bind ! __history_previous_command
-  bind '$' __history_previous_command_arguments
+    bind ! __history_previous_command
+    bind '$' __history_previous_command_arguments
 end
 
 # Function for creating a backup file
@@ -155,8 +158,8 @@ end
 function copy
     set count (count $argv | tr -d \n)
     if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | trim-right /)
-	set to (echo $argv[2])
+        set from (echo $argv[1] | trim-right /)
+        set to (echo $argv[2])
         command cp -r $from $to
     else
         command cp $argv
@@ -252,8 +255,8 @@ alias kittyrc='nv ~/.config/kitty/kitty.conf'
 
 # Changing "ls" to "exa"
 alias l='exa -al --color=always --icons --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --icons --group-directories-first'  # long format
+alias la='exa -a --color=always --group-directories-first' # all files and dirs
+alias ll='exa -l --color=always --icons --group-directories-first' # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
@@ -273,11 +276,11 @@ alias install='sudo pacman -S'
 alias uninstall='sudo pacman -Rns'
 alias paruinstall='paru -S'
 alias yayinstall='yay -S'
-alias update='sudo pacman -Syyu'                  # update only standard pkgs
+alias update='sudo pacman -Syyu' # update only standard pkgs
 #alias pacupgrade='sudo pacman -Syyu'                # Refresh pkglist & update standard pkgs
-alias yay='yay --Syu && yay -Sua --noconfirm'              # update only AUR pkgs (yay)
-alias paru='paru -Syu && paru -Sua --noconfirm'             # update only AUR pkgs (paru)
-alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
+alias yay='yay --Syu && yay -Sua --noconfirm' # update only AUR pkgs (yay)
+alias paru='paru -Syu && paru -Sua --noconfirm' # update only AUR pkgs (paru)
+alias unlock='sudo rm /var/lib/pacman/db.lck' # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # remove orphaned packages
 
 # get fastest mirrors
@@ -297,8 +300,8 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # adding flags
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+alias df='df -h' # human-readable sizes
+alias free='free -m' # show sizes in MB
 alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
 alias vifm='./.config/vifm/scripts/vifmrun'
 alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'
@@ -412,5 +415,10 @@ starship init fish | source
 
 #source ~/.local/share/icons-in-terminal/icons.fish
 
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+#eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

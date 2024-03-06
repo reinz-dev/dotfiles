@@ -1,0 +1,155 @@
+format = """
+[](bg:#00000000 fg:#9A0638)\
+[   ](bg:#9a0638 fg:#ffffff)\
+[](bg:#151E71 fg:#9A0638)\
+$directory\
+[](fg:#151E71 bg:#001647)\
+$git_branch\
+[](fg:#001647 bg:#001647)\
+$git_status\
+[](fg:#001647 bg:#890743)\
+$git_state\
+$git_metrics\
+[](fg:#890743 bg:#120F23)\
+$c\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+[](fg:#120F23 bg:#890743)\
+$docker_context\
+[](fg:#890743 bg:#)\
+$time\
+$line_break\
+$character
+"""
+
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:#9A0638"
+style_root = "bg:#9A0638"
+format = '[$user ]($style)'
+
+[directory]
+style = "bg:#151E71"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "  "
+"Downloads" = "  "
+"Music" = "  "
+"Pictures" = "  "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+symbol = "© "
+style = "bg:#001647"
+format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+
+[character]
+#success_symbol = "[](purple)"
+#error_symbol = "[](red)"
+#vicmd_symbol = "[](green)"
+
+[docker_context]
+symbol = " "
+style = "bg:#06969A"
+format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+
+[elixir]
+symbol = "💧 "
+style = "bg:#7aa2f7"
+format = '[[ $symbol ($version) ](bg:#7aa2f7)]($style)'
+
+[elm]
+symbol = "🌳 "
+style = "bg:#001647"
+format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#001647"
+format = '[[ $symbol $branch](bg:#001647)]($style)'
+
+[git_status]
+style = "bg:#001647"
+format = '[[($all_status$ahead_behind )](bg:#001647)]($style)'
+
+[git_state]
+style = "bg:#890743"
+format = '([ $state( $progress_current/$progress_total )]($style)) '
+
+[git_metrics]
+added_style = "#1a1b26"
+format = '([ +$added ](bg:#890743))([-$deleted ](bg:#890743))'
+disabled = false
+
+[golang]
+symbol = "🐹 "
+style = "bg:#001647"
+format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+
+[haskell]
+symbol = "λ "
+style = "bg:#001647"
+format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+
+[java]
+symbol = " "
+style = "bg:#120F23"
+format = '[[ $symbol ($version) ](bg:#120F23)]($style)'
+
+[julia]
+symbol = "ஃ "
+style = "bg:#001647"
+format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#120F23"
+format = '[[ $symbol ($version) ](bg:#120F23)]($style)'
+
+[nim]
+symbol = "👑 "
+style = "bg:#001647"
+format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+
+[rust]
+symbol = "🦀"
+style = "bg:#001647"
+format = '[[ $symbol ($version) ](bg:#001647)]($style)'
+
+# [battery]
+# full_symbol = "  "
+# charging_symbol = " "
+# discharging_symbol = "  "
+# format = '[$symbol$percentage]($style) '
+# disabled = false
+#
+# [[battery.display]]
+# threshold = 30
+# style = "bold red"
+
+[time]
+disabled = false
+time_format = "%R"                     # Hour:Minute Format
+style = "bg:#0b143b"
+format = '[[  $time ](bg:#)]($style)'

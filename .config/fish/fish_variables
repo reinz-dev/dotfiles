@@ -36,6 +36,9 @@ SETUVAR fish_color_selection:\x2d\x2dbackground\x3dccd0da
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:179299
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_cursor_default:line
+SETUVAR fish_cursor_insert:underscore
+SETUVAR fish_cursor_replace_one:underscore
 SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_background:\x1d
 SETUVAR fish_pager_color_completion:4c4f69
@@ -50,4 +53,4 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/reinz/\x2elocal/bin\x1e/home/reinz/Applications
+SETUVAR fish_user_paths:/home/Forsaken/\x2elocal/bin\x1e/home/Forsaken/Applications
